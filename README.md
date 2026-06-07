@@ -3,7 +3,7 @@
 Code, figures, and reproduction instructions for the manuscript:
 
 **"Tissue-supervised latent representations from a curated 118K-sample multi-source bulk RNA-seq compendium"**
-A. Pande, A. Akalin (MDC Berlin / BIMSB)
+A. Pande, B. Uyar, A. Akalin (MDC Berlin / BIMSB)
 
 This repository contains the analysis code and figure-generation scripts. Large
 files (model weights, the HDF5 training compendium, pre-computed embeddings) are
