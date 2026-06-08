@@ -40,13 +40,7 @@ flexynesis_tissue_vae_manuscript/
 > Note: the HDF5 dataloader is also contributed upstream to the Flexynesis
 > package: https://github.com/BIMSBbioinfo/flexynesis/pull/146
 
-> **Figure 6 (BulkFormer comparison).** Figure 6 reports a zero-shot comparison
-> against BulkFormer (Kang et al., bioRxiv 2025, doi:10.1101/2025.06.11.659222),
-> computed by k-NN (k=5, cosine) on BulkFormer embeddings of the TARGET cohort and
-> the held-out reference set. The pre-computed BulkFormer embeddings are deposited
-> on Zenodo. A standalone reproduction script is not included in this release; it
-> will be added once the embedding export is re-run with sample identifiers
-> retained. Available on request in the meantime.
+Figure 6 (BulkFormer comparison). Figure 6 compares the supervised VAE against BulkFormer (Kang et al., bioRxiv 2025, doi:10.1101/2025.06.11.659222) in a zero-shot setting, using k-NN (k = 5, cosine) on BulkFormer embeddings of the TARGET cohort and the held-out reference set. The pre-computed BulkFormer embeddings are deposited on Zenodo
 
 ---
 
