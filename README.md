@@ -16,6 +16,7 @@ hosted on Zenodo and linked below — they exceed GitHub's file-size limits.
 ```
 flexynesis_tissue_vae_manuscript/
 ├── README.md                  ← this file
+├── TUTORIAL.md                ← how to use the pre-trained model (get embeddings + predictions)
 ├── LICENSE                    ← MIT (code)
 ├── environment.yml            ← conda environment to reproduce the analyses
 ├── scripts/                   ← all analysis + figure-generation code
@@ -25,6 +26,7 @@ flexynesis_tissue_vae_manuscript/
 │   ├── train_denoising_vae.py        DenoisingVAE class + evaluation routine
 │   ├── baseline_hvg_knn_v3.py        HVG + kNN baseline for comparison
 │   ├── build_v3_webapp_artifacts.py  export embeddings/artifacts for the demo app
+│   ├── get_embeddings.py             apply the pre-trained model to new data (inference)
 │   ├── regen_fig1_v3.py              Figure 1  (t-SNE latent space)
 │   ├── regen_fig2_final_v3.py        Figure 2  (per-class accuracy)
 │   ├── regen_fig3_v3.py              Figure 3  (reconstruction + imputation)
