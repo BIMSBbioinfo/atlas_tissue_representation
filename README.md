@@ -40,7 +40,7 @@ flexynesis_tissue_vae_manuscript/
 > Note: the HDF5 dataloader is also contributed upstream to the Flexynesis
 > package: https://github.com/BIMSBbioinfo/flexynesis/pull/146
 
-Figure 6 (BulkFormer comparison). Figure 6 compares the supervised VAE against BulkFormer (Kang et al., bioRxiv 2025, doi:10.1101/2025.06.11.659222) in a zero-shot setting, using k-NN (k = 5, cosine) on BulkFormer embeddings of the TARGET cohort and the held-out reference set. The pre-computed BulkFormer embeddings are deposited on Zenodo
+Figure 6 (BulkFormer comparison). Figure 6 compares the supervised VAE against BulkFormer (Kang et al., bioRxiv 2025, doi:10.1101/2025.06.11.659222) in a zero-shot setting, using k-NN (k = 5, cosine) on BulkFormer embeddings of the TARGET cohort and the held-out reference set. The pre-computed BulkFormer embeddings are deposited on Zenodo.
 
 ---
 
@@ -111,6 +111,10 @@ python scripts/baseline_hvg_knn_v3.py
 
 ---
 
+## Using the pre-trained model
+
+To apply the trained model to your own bulk RNA-seq and get tissue embeddings + predictions, see [TUTORIAL.md](TUTORIAL.md) (or run `python get_embeddings.py`). Model weights and artifacts are on Zenodo (doi:10.5281/zenodo.20595537).
+
 ## Demo app
 
 A live demo runs the trained model on user-supplied bulk RNA-seq:
@@ -124,7 +128,7 @@ The `webapp/` folder contains the app source and a small sample input
 ## Licence
 
 - Code (`scripts/`, `webapp/`) — MIT (see `LICENSE`)
-- Data and model weights (Zenodo) — CC-BY-4.0
+- Data and model weights Zenodo (DOI: 10.5281/zenodo.20595537) — CC-BY-4.0
 
 ---
 
