@@ -161,11 +161,6 @@ print(knn_labels)
 
 For a no-code interface, the same model runs as a web app:
 
-```bash
 streamlit run webapp/app.py
-```
 
-or use the hosted demo: https://huggingface.co/spaces/akalinLab/flexynesis-tissue-vae
-
-Upload a CSV/TSV, and the app returns tissue predictions, confidence scores, and
-downloadable embeddings.
+or try the hosted demo: https://huggingface.co/spaces/akalinLab/flexynesis-tissue-vae — a lightweight version for quick exploration. Because the full model weights exceed the free Hugging Face tier, the hosted demo approximates embeddings via TruncatedSVD and classifies by kNN, so its predictions are approximate. For exact VAE inference and confidence scores, run the script above with the model from Zenodo.
