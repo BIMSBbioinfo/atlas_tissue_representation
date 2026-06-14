@@ -1,12 +1,13 @@
-[TUTORIAL.md](https://github.com/user-attachments/files/28746445/TUTORIAL.md)
 # Tutorial: Getting tissue embeddings and predictions from the Flexynesis tissue-VAE
 
 This guide shows how to take a bulk RNA-seq expression matrix and obtain (1) the
 121-dimensional latent embedding and (2) the predicted UBERON tissue of origin,
 using the pre-trained model — **no retraining required**.
 
+> **Two ways to run this:** this guide uses the **full model** from Zenodo (exact inference, requires the flexynesis environment). For a **lightweight, flexynesis-free** option — a 53 MB compressed model that runs anywhere — see [`model_compressed/TUTORIAL_COMPRESSED.md`](model_compressed/TUTORIAL_COMPRESSED.md).
+
 The trained model and its artifacts are deposited on Zenodo
-(doi:10.5281/zenodo.20595537). Download these into a `model/` directory:
+(https://doi.org/10.5281/zenodo.20595537). Download these into a `model/` directory:
 
 | File | Purpose |
 |---|---|
@@ -15,16 +16,16 @@ The trained model and its artifacts are deposited on Zenodo
 | `embeddings_train.csv`, `embeddings_test.csv` | Reference embeddings (for kNN, optional) |
 | `train_clin.csv`, `test_clin.csv` | Reference tissue labels (for kNN, optional) |
 
-A small example input, `test_5samples.csv`, is included in the `webapp/` folder of
-the repository.
+A small example input, `gex.lung_100.csv` (100 TCGA lung samples), is included in the repository root.
 
 ---
 
 ## 1. Environment
 
 ```bash
-conda env create -f environment.yml
+mamba create -n flexynesis python==3.11
 conda activate flexynesis
+pip install flexynesis
 ```
 
 Core dependencies: PyTorch, pandas, numpy, scikit-learn (1.7.x), joblib.
@@ -65,7 +66,7 @@ gene_list = list(art["feature_lists"]["gex"])      # genes the model expects
 scaler    = art["transforms"]["gex"]               # fitted StandardScaler
 
 # ---- Load your expression matrix (HGNC symbols, log2 expression) ----
-df = pd.read_csv("test_5samples.csv", index_col=0)
+df = pd.read_csv("gex.lung_100.csv", index_col=0)
 
 # Auto-orient so that samples are rows, genes are columns
 genes_in_cols = len(set(df.columns) & set(gene_list))
@@ -122,7 +123,13 @@ results.to_csv("my_predictions.csv", index=False)
 print(results)
 ```
 
-A ready-to-run version of this script is provided as `get_embeddings.py`.
+A ready-to-run version is provided as `scripts/get_embeddings.py`:
+
+```bash
+python scripts/get_embeddings.py gex.lung_100.csv --model-dir model --out-prefix myrun
+```
+
+It writes `myrun_predictions.csv` and `myrun_embeddings.csv`.
 
 ---
 
