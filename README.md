@@ -18,7 +18,6 @@ flexynesis_tissue_vae_manuscript/
 ├── README.md                  ← this file
 ├── TUTORIAL.md                ← how to use the pre-trained model (get embeddings + predictions)
 ├── LICENSE                    ← MIT (code)
-├── environment.yml            ← conda environment to reproduce the analyses
 ├── scripts/                   ← all analysis + figure-generation code
 │   ├── csv_to_h5.py                  build the HDF5 training compendium from CSVs
 │   ├── h5_dataloader.py              memory-safe HDF5 dataloader (see also PR #146)
@@ -65,12 +64,13 @@ Download these from Zenodo and place them as indicated in the reproduction steps
 ## Environment
 
 ```bash
-conda env create -f environment.yml
-conda activate flexynesis
+mamba create -n flexynesis python==3.11
+mamba activate flexynesis
+pip install flexynesis
 ```
 
-Key dependencies: PyTorch, PyTorch Lightning, h5py (>=3.10), scikit-learn,
-pandas, numpy, matplotlib. (Exact versions pinned in `environment.yml`.)
+Key dependencies (installed automatically via `pip install flexynesis`):
+PyTorch, PyTorch Lightning, h5py (>=3.10), scikit-learn, pandas, numpy, matplotlib.
 
 ---
 
