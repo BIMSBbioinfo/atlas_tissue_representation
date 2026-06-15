@@ -166,8 +166,7 @@ print(knn_labels)
 
 ## 5. Interactive option
 
-For a no-code interface, the same model runs as a web app:
+For a no-code interface, try the hosted demo:
+https://huggingface.co/spaces/akalinLab/flexynesis-tissue-vae
 
-streamlit run webapp/app.py
-
-or try the hosted demo: https://huggingface.co/spaces/akalinLab/flexynesis-tissue-vae — a lightweight version for quick exploration. Because the full model weights exceed the free Hugging Face tier, the hosted demo approximates embeddings via TruncatedSVD and classifies by kNN, so its predictions are approximate. For exact VAE inference and confidence scores, run the script above with the model from Zenodo.
+The Space runs the **trained model directly** via the 53 MB int8 TorchScript build (`vae_tissue_int8.torchscript.pt`) — exact VAE inference with softmax confidence, the same logic as `scripts/predict_tissue.py`. Upload a gene-expression CSV/TSV and the app returns tissue predictions, confidence, and the 121-dimensional embeddings, all downloadable as CSV.
