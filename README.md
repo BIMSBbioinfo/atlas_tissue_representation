@@ -1,4 +1,4 @@
-# Flexynesis tissue-VAE manuscript — code and reproduction
+# Atlas Tissue Representation — code and reproduction
 
 Code, figures, and reproduction instructions for the manuscript:
 
