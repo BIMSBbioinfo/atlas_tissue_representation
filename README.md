@@ -2,7 +2,7 @@
 
 Code, figures, and reproduction instructions for the manuscript:
 
-**"Tissue-supervised latent representations from a curated 118K-sample multi-source bulk RNA-seq compendium"**
+**"An atlas-scale generative model for unified representation learning of bulk RNA-seq data"**
 A. Pande, B. Uyar, A. Akalin (MDC Berlin / BIMSB)
 
 This repository contains the analysis code and figure-generation scripts. Large
