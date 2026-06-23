@@ -62,8 +62,8 @@ Download these from Zenodo and place them as indicated in the reproduction steps
 ## Environment
 
 ```bash
-mamba create -n flexynesis python==3.11
-mamba activate flexynesis
+mamba create -n atlas_tissue_representation python==3.11
+mamba activate atlas_tissue_representation
 pip install flexynesis
 ```
 
