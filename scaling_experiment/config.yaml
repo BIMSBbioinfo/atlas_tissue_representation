@@ -1,0 +1,49 @@
+DirectPred:
+  - type: Integer
+    name: latent_dim
+    low: 16
+    high: 128
+  - type: Real
+    name: hidden_dim_factor
+    low: 0.5
+    high: 2
+  - type: Integer
+    name: supervisor_hidden_dim
+    low: 16
+    high: 64
+  - type: Real
+    name: lr
+    low: 0.0001
+    high: 0.01
+    prior: log-uniform
+  - type: Categorical
+    name: batch_size
+    categories: [256, 512, 1024, 2048]
+  - type: Categorical
+    name: epochs
+    categories: [500]
+
+supervised_vae:
+  - type: Integer
+    name: latent_dim
+    low: 58
+    high: 59
+  - type: Real
+    name: hidden_dim_factor
+    low: 0.5
+    high: 0.50001
+  - type: Integer
+    name: supervisor_hidden_dim
+    low: 61
+    high: 62
+  - type: Real
+    name: lr
+    low: 0.0001
+    high: 0.00010001
+    prior: log-uniform
+  - type: Categorical
+    name: batch_size
+    categories: [1024]
+  - type: Categorical
+    name: epochs
+    categories: [200]
