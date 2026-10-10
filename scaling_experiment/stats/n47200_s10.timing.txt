@@ -1,0 +1,1 @@
+N=47200 seed=10 exit=0 wallclock_s=918
