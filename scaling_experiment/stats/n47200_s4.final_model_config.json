@@ -1,0 +1,25 @@
+{
+  "model_class": "supervised_vae",
+  "model_module": "flexynesis.models.supervised_vae",
+  "device_type": "gpu",
+  "target_variables": [
+    "uberon_tissue"
+  ],
+  "surv_event_var": null,
+  "surv_time_var": null,
+  "config": {
+    "latent_dim": "59",
+    "hidden_dim_factor": 0.5000004613870253,
+    "supervisor_hidden_dim": "62",
+    "lr": 0.00010000496341456344,
+    "batch_size": 1024,
+    "epochs": 200
+  },
+  "current_epoch": 85,
+  "latent_dim": "59",
+  "hidden_dim_factor": 0.5000004613870253,
+  "supervisor_hidden_dim": "62",
+  "lr": 0.00010000496341456344,
+  "batch_size": 1024,
+  "epochs": 200
+}
