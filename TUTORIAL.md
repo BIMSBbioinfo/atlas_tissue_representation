@@ -7,7 +7,7 @@ using the pre-trained model — **no retraining required**.
 > **Two ways to run this:** this guide uses the **full model** from Zenodo (exact inference, requires the flexynesis environment). For a **lightweight, flexynesis-free** option — a 53 MB compressed model that runs anywhere — see [`model_compressed/TUTORIAL_COMPRESSED.md`](model_compressed/TUTORIAL_COMPRESSED.md).
 
 The trained model and its artifacts are deposited on Zenodo
-(https://doi.org/10.5281/zenodo.20595537). Download these into a `model/` directory:
+(https://doi.org/10.5281/zenodo.20661013). Download these into a `model/` directory:
 
 | File | Purpose |
 |---|---|
@@ -37,11 +37,13 @@ Core dependencies: PyTorch, pandas, numpy, scikit-learn (1.7.x), joblib.
 
 ## 2. Input format
 
-- **Rows or columns** may be genes; the code auto-orients the matrix.
-- **Gene identifiers:** HGNC gene symbols.
-- **Values:** log2-transformed expression (TPM, RPKM, or counts).
-- Genes not seen by the model are ignored; missing model genes are zero-filled.
-  A gene overlap below ~1,000 makes results unreliable.
+- **Values:** Log2-transformed normalized expression
+  (e.g., log2(TPM + 1) or log2(RPKM + 1)),
+  consistent with the model's training preprocessing.
+- Raw sequencing counts must be normalized before use.
+- Gene symbols must match the model's HGNC feature names.
+- Predictions from datasets with substantial missing-gene
+  coverage should be interpreted cautiously.
 
 ---
 
