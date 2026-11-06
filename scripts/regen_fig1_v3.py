@@ -3,8 +3,9 @@
 Figure 1 — v3 (118k Scope B HDF5)
 ==================================
 t-SNE of latent embeddings from v3 Standard VAE (best checkpoint) on the
-held-out test set (n=28,274). Kobak-Berens protocol: PCA init, multi-scale
-perplexity, learning rate n/12. Also computes LISI + kNN source mixing.
+held-out test set (n=28,274). Kobak-Berens protocol:
+PCA initialization, perplexity 30, learning rate n/12,
+750 iterations, cosine distance.
 
 Adapted from regen_fig1.py (v2). Uses HDF5 data + v3 model paths.
 """
@@ -99,7 +100,6 @@ print(f"    Sources: {clin['source'].value_counts().to_dict()}")
 # ----------------------------------------------------------------------
 n      = len(embeddings)
 lr     = n / 12
-perp_s = 30
 perp_l = int(np.sqrt(n))
 print(f"\n[4] Kobak-Berens t-SNE: n={n}, LR={lr:.0f}, perplexity={perp_s}")
 
@@ -169,8 +169,6 @@ print(f"  kNN source mixing (k=20): {knn_mix:.3f}")
 print(f"  LISI (source):            {lisi:.2f} / {n_sources}.0")
 print(f"  t-SNE: n={n}, LR={lr:.0f}, perplexity {perp_s}")
 print(f"{'='*55}")
-print(f"\nv2 reference: kNN={0.047}, LISI={1.09}/4.0")
-
 # ----------------------------------------------------------------------
 # Organ system / source colour mapping
 # ----------------------------------------------------------------------
@@ -230,14 +228,7 @@ for organ in organ_colors:
     ax1.scatter(coords[mask, 0], coords[mask, 1],
                 c=organ_colors[organ], s=2, alpha=0.5, linewidths=0,
                 rasterized=True)
-    # Label at centroid
-    cx, cy = coords[mask, 0].mean(), coords[mask, 1].mean()
-    ax1.text(cx, cy, organ, fontsize=7, ha='center', va='center',
-             fontweight='bold',
-             bbox=dict(boxstyle='round,pad=0.2', facecolor='white',
-                       edgecolor=organ_colors[organ], alpha=0.75, linewidth=0.8))
-
-ax1.set_xlabel('t-SNE 1', fontsize=12)
+    ax1.set_xlabel('t-SNE 1', fontsize=12)
 ax1.set_ylabel('t-SNE 2', fontsize=12)
 ax1.set_title('a', fontsize=18, fontweight='bold', loc='left')
 ax1.tick_params(bottom=False, left=False, labelbottom=False, labelleft=False)
