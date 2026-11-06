@@ -1,14 +1,14 @@
 # Atlas Tissue Representation — code and reproduction
 
-Code, figures, and reproduction instructions for the manuscript:
+**"Atlas-scale representation learning reveals tissue identity as an organizing principle of bulk RNA-seq"**
 
-**"An atlas-scale generative model for unified representation learning of bulk RNA-seq data"**
-A. Pande, B. Uyar, A. Akalin (MDC Berlin / BIMSB)
+**Authors:** Amit Pande¹, Bora Uyar¹, Ahmed Tijani Akinfalabi², Marcel Giller¹, Altuna Akalin¹*
 
-This repository contains the analysis code and figure-generation scripts. Large
-files (model weights, the HDF5 training compendium, pre-computed embeddings) are
-hosted on Zenodo and linked below — they exceed GitHub's file-size limits.
+¹ Bioinformatics and Omics Data Science Platform, Berlin Institute for Medical Systems Biology (BIMSB), Max Delbrück Center for Molecular Medicine, Berlin, Germany
 
+² University of Potsdam, Potsdam, Germany
+
+*Correspondence: altuna.akalin@mdc-berlin.de*
 ---
 
 ## What is here
