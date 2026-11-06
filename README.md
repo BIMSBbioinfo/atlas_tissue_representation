@@ -91,7 +91,17 @@ python scripts/train_denoising_vae_h5.py \
     --also_train_standard
 ```
 
-**3. Regenerate figures** (each script reads the deposited model/results and
+**3. Regenerate figures**
+**3. Generate main figures**
+
+The following scripts generate or export Figures 1–8.
+Figures 1–4 require the corresponding model checkpoints and
+datasets. Figure 5 uses recorded benchmark results.
+Figures 6–8 support figure generation or export from their
+specified numerical results or SVG source files.
+
+See individual scripts for input requirements and output paths.
+(each script reads the deposited model/results and
 writes SVG + PNG into `figures/`):
 ```bash
 python scripts/regen_fig1_v3.py        # Figure 1
