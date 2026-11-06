@@ -70,7 +70,7 @@ scatter_data = [
     (50,     89.6, '#888888', None),
     (121,    92.0, '#888888', None),
     (2000,   93.4, '#2980B9', None),
-    (16292,  92.6, '#2980B9', 'All genes +kNN'),
+    (16115,  92.6, '#2980B9', 'All genes +kNN'),
     (121,    94.9, '#27AE60', 'Supervised VAE [v3]'),
 ]
 for dim, acc, col, label in scatter_data:
@@ -86,7 +86,7 @@ ax2.annotate('scGPT (zero-shot)',
              fontsize=8.5, color='#E74C3C',
              arrowprops=dict(arrowstyle='->', color='#E74C3C', lw=1.2))
 ax2.annotate('All genes +kNN',
-             xy=(16292, 92.6), xytext=(5000, 95),
+             xy=(16115, 92.6), xytext=(5000, 95),
              fontsize=8.5, color='#2980B9',
              arrowprops=dict(arrowstyle='->', color='#2980B9', lw=1.2))
 
@@ -114,5 +114,5 @@ print("Saved: Fig5_benchmarks_v3_118k.svg / .png")
 print(f"\nv3 Key numbers:")
 print(f"  Supervised VAE:    94.9%  (dim=121)")
 print(f"  Top-2000 HVG+kNN:  93.4%  (dim=2000)")
-print(f"  All genes+kNN:     92.6%  (dim=16292)")
+print(f"  All genes+kNN:     92.6%  (dim=16115)")
 print(f"  scGPT zero-shot:   61.0%  (dim=768)")
