@@ -7,7 +7,7 @@ Evaluates how well the v3 Standard VAE generalises to TARGET paediatric
 cancers (734 samples, 7 cancer types) — independent dataset never seen
 during training.
 
-Protocol (matches v2 manuscript Methods):
+Protocol (final 118k model; held-out reference):
   1. Load v3 Standard VAE (best checkpoint)
   2. Load TARGET test data, align to 16,115 model genes
   3. Per-gene z-score normalisation (heuristic cross-platform alignment)
@@ -222,7 +222,6 @@ for ct in sorted(per_cancer, key=lambda x: -per_cancer[x]['n']):
     pred_str = ', '.join(f"{k}={v}" for k, v in top3)
     print(f"      Top predictions: {pred_str}")
 print(f"{'='*70}")
-print(f"\nv2 baseline (75k_v2, manuscript): 86.6% overall")
 print(f"v3 result:                        {overall_acc*100:.1f}% overall")
 
 # ----------------------------------------------------------------------
@@ -238,7 +237,6 @@ results = {
     'k_neighbours': K_NEIGHBOURS,
     'per_cancer': per_cancer,
     'baseline_v2_manuscript': {'overall_accuracy': 0.866},
-}
 with open(OUT_JSON, 'w') as f:
     json.dump(results, f, indent=2, default=str)
 print(f"\nSaved: {OUT_JSON}")
