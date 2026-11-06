@@ -128,10 +128,10 @@ The `webapp/` folder contains the app source and a small sample input
 ## Licence
 
 - Code (`scripts/`, `webapp/`) — MIT (see `LICENSE`)
-- Data and model weights Zenodo (DOI: 10.5281/zenodo.20595537) — CC-BY-4.0
+- Data and model weights — [Zenodo](https://doi.org/10.5281/zenodo.20661013) — CC-BY-4.0
 
 ---
 
 ## Contact
 
-Amit Pande — MDC Berlin / BIMSB — amit.pande@mdc-berlin.de
+amitpande74@gmail.com
