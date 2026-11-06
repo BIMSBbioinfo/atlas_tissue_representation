@@ -45,7 +45,7 @@ flexynesis_tissue_vae_manuscript/
 
 ## Data and model weights (Zenodo)
 
-The following are deposited on Zenodo (DOI: **[to be added]**):
+The following are deposited on Zenodo (DOI: **[10.5281/zenodo.20661013]**):
 
 | Item | Size | Description |
 |---|---|---|
