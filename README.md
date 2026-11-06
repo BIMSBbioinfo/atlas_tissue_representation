@@ -95,7 +95,7 @@ python scripts/train_denoising_vae_h5.py \
 writes SVG + PNG into `figures/`):
 ```bash
 python scripts/regen_fig1_v3.py        # Figure 1
-python scripts/regen_fig2_v3.py  # Figure 2
+python scripts/regen_fig2_v3.py        # Figure 2
 python scripts/regen_fig3_v3.py        # Figure 3
 python scripts/regen_fig4_v3.py        # Figure 4
 python scripts/regen_fig5_v3.py        # Figure 5
