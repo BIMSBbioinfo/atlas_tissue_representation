@@ -222,8 +222,6 @@ for ct in sorted(per_cancer, key=lambda x: -per_cancer[x]['n']):
     pred_str = ', '.join(f"{k}={v}" for k, v in top3)
     print(f"      Top predictions: {pred_str}")
 print(f"{'='*70}")
-print(f"v3 result:                        {overall_acc*100:.1f}% overall")
-
 # ----------------------------------------------------------------------
 # Save JSON
 # ----------------------------------------------------------------------
@@ -239,8 +237,6 @@ results = {
     'baseline_v2_manuscript': {'overall_accuracy': 0.866},
 with open(OUT_JSON, 'w') as f:
     json.dump(results, f, indent=2, default=str)
-print(f"\nSaved: {OUT_JSON}")
-
 # ----------------------------------------------------------------------
 # Plot — manuscript-style stacked bars
 # ----------------------------------------------------------------------
