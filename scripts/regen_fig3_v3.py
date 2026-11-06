@@ -5,8 +5,9 @@ Figure 3 — v3 (118k Scope B HDF5)
 Reconstruction quality (per-gene + per-sample Spearman ρ) and gene imputation
 for both Standard and Denoising VAEs trained on the v3 compendium.
 
-CPU inference (both models 8GB, won't fit on RTX 4060). Saves per-gene and
-per-sample arrays as .npy for Fig S2 reuse.
+CPU inference for Standard and Denoising VAEs.
+Saves reconstruction and imputation results in
+fig3_arrays_v3.npz for downstream analysis.
 
 Adapted from regen_fig3.py (v2).
 """
@@ -104,7 +105,7 @@ def impute(model, orig, fracs=(0.1, 0.2, 0.3), n_test=500, seed=42):
     n_genes = orig.shape[1]
     n_test = min(n_test, orig.shape[0])
     gex_tensor = torch.tensor(orig, dtype=torch.float32)
-    torch.manual_seed(seed)
+    torch.manual_seed(42)
     results = {}
     for frac in fracs:
         n_mask = int(n_genes * frac)
@@ -200,14 +201,10 @@ print(f"  Saved arrays: {ARRAYS_NPZ}")
 print(f"\n{'='*55}")
 print(f"v3 RECONSTRUCTION SUMMARY (118k Scope B)")
 print(f"{'='*55}")
-print(f"  Standard  per-gene rho  : {np.nanmedian(gene_rho_std):.4f}  "
-      f"(v2: 0.9138, +{(np.nanmedian(gene_rho_std)-0.9138)*100:.1f}%)")
-print(f"  Denoising per-gene rho  : {np.nanmedian(gene_rho_dn):.4f}  "
-      f"(v2: 0.9192, +{(np.nanmedian(gene_rho_dn)-0.9192)*100:.1f}%)")
-print(f"  Standard  per-sample rho: {np.nanmedian(samp_rho_std):.4f}  "
-      f"(v2: 0.7662, +{(np.nanmedian(samp_rho_std)-0.7662)*100:.1f}%)")
-print(f"  Denoising per-sample rho: {np.nanmedian(samp_rho_dn):.4f}  "
-      f"(v2: 0.7729, +{(np.nanmedian(samp_rho_dn)-0.7729)*100:.1f}%)")
+print(f"  Standard  per-gene rho  : {np.nanmedian(gene_rho_std):.4f}")
+print(f"  Denoising per-gene rho  : {np.nanmedian(gene_rho_dn):.4f}")
+print(f"  Standard  per-sample rho: {np.nanmedian(samp_rho_std):.4f}")
+print(f"  Denoising per-sample rho: {np.nanmedian(samp_rho_dn):.4f}")
 for f in [0.1, 0.2, 0.3]:
     print(f"  Imputation {int(f*100)}%: std={imp_std[f]:.4f}  dn={imp_dn[f]:.4f}")
 print(f"{'='*55}")
