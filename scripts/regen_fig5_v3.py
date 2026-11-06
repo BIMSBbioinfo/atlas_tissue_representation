@@ -60,7 +60,7 @@ legend_patches = [
 ]
 ax1.legend(handles=legend_patches, fontsize=8.5, loc='upper left',
            frameon=True, framealpha=0.9)
-ax1.text(-0.04, 1.04, 'A', transform=ax1.transAxes,
+ax1.text(-0.04, 1.04, 'a', transform=ax1.transAxes,
          fontsize=16, fontweight='bold')
 
 # Panel B: accuracy vs dimensionality scatter
@@ -70,7 +70,7 @@ scatter_data = [
     (50,     89.6, '#888888', None),
     (121,    92.0, '#888888', None),
     (2000,   93.4, '#2980B9', None),
-    (16115,  92.6, '#2980B9', 'All genes +kNN'),
+    (16115, 92.6, '#2980B9', 'All genes +kNN'),
     (121,    94.9, '#27AE60', 'Supervised VAE [v3]'),
 ]
 for dim, acc, col, label in scatter_data:
@@ -104,7 +104,7 @@ ax2.set_ylim(55, 98)
 ax2.spines['top'].set_visible(False)
 ax2.spines['right'].set_visible(False)
 ax2.grid(alpha=0.3, zorder=1)
-ax2.text(-0.08, 1.04, 'B', transform=ax2.transAxes,
+ax2.text(-0.08, 1.04, 'b', transform=ax2.transAxes,
          fontsize=16, fontweight='bold')
 
 plt.tight_layout()
