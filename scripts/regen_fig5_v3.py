@@ -90,7 +90,7 @@ ax2.annotate('All genes +kNN',
              fontsize=8.5, color='#2980B9',
              arrowprops=dict(arrowstyle='->', color='#2980B9', lw=1.2))
 
-ax2.annotate('135× compression\nhigher accuracy',
+ax2.annotate('133× compression\nhigher accuracy',
              xy=(121, 94.9), xytext=(220, 82),
              fontsize=8, color='#27AE60',
              arrowprops=dict(arrowstyle='->', color='#27AE60', lw=1.0,
